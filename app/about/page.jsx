@@ -1,10 +1,10 @@
 function About() {
   return (
-    <div>   
-        <h1>About Kiosko App</h1>
-        <p>This application is designed to manage products, inventory, suppliers, purchases, and sales for a kiosk business.</p>
-        <p>Version: 1.0.0</p>
-        <p>Developed by: GPV Systems</p>
+    <div className={"about-container"}>   
+        <h1>Acerca Kioskito App</h1>
+        <p>Esta aplicación está diseñada para gestionar productos, inventario, proveedores, compras y ventas para un negocio de kiosko.</p>
+        <p>Versión: 1.0.0</p>
+        <p>Desarrollado por: GPV Systems</p>
     </div>
   );
 }
