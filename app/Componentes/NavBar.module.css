@@ -1,6 +1,6 @@
 .navBar {
     background-color: #9cfca1;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,6 +8,24 @@
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+    padding: 0;
+}
+
+.hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 .ulNavBar {
@@ -21,6 +39,12 @@
 }
 
 .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoContent {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -60,16 +84,27 @@
 
 /* Tablet: 481px to 768px */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
     .navBar {
+        flex-wrap: wrap;
         height: auto;
         padding: 12px 15px;
-        flex-wrap: wrap;
     }
     
     .ulNavBar {
         flex-direction: column;
         width: 100%;
         gap: 8px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .ulNavBar.menuOpen {
+        max-height: 500px;
     }
     
     .liNavBar {
@@ -86,16 +121,27 @@
 
 /* Mobile: up to 480px */
 @media (max-width: 480px) {
+    .hamburger {
+        display: flex;
+    }
+
     .navBar {
+        flex-wrap: wrap;
         height: auto;
         padding: 10px;
-        flex-direction: column;
     }
     
     .ulNavBar {
         flex-direction: column;
         width: 100%;
         gap: 5px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .ulNavBar.menuOpen {
+        max-height: 500px;
     }
     
     .liNavBar {

@@ -1,35 +1,52 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./NavBar.module.css";
 
-function navBar() {
+function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div>
       <nav className={styles.navBar}>
-      <ul className={styles.ulNavBar}>
-        <li className={styles.liNavBar}>
+        <div className={styles.logoContainer}>
           <Link href="/">
-            <div className={styles.logoContainer}>
+            <div className={styles.logoContent}>
               <Image src="/logo.svg" alt="KIOSKO APP" width={45} height={45} />
               <span className={styles.titulo}>MIKIOSKITO</span>
             </div>
           </Link>
-        </li>
-        <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/">🏠 Inicio</Link></li>
-         <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/about">ℹ️ Acerca</Link></li>
-        <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/productos">🛍️ Productos</Link></li>
-       
-        <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/inventario">📦 Inventario</Link></li>
-        <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/servicios">🔧 Servicios</Link></li>
-        <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/proveedores">🤝 Proveedores</Link></li>
-        <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/compras">💳 Compras</Link></li>
-        <li className={styles.liNavBar}><Link className={styles.aNavBar}  href="/ventas">💰 Ventas</Link></li> 
-      </ul>
-    </nav>  
+        </div>
 
+        <button 
+          className={styles.hamburger} 
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span className={`${styles.hamburgerLine} ${menuOpen ? styles.open : ""}`}></span>
+          <span className={`${styles.hamburgerLine} ${menuOpen ? styles.open : ""}`}></span>
+          <span className={`${styles.hamburgerLine} ${menuOpen ? styles.open : ""}`}></span>
+        </button>
+
+        <ul className={`${styles.ulNavBar} ${menuOpen ? styles.menuOpen : ""}`}>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/" onClick={() => setMenuOpen(false)}>🏠 Inicio</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/about" onClick={() => setMenuOpen(false)}>ℹ️ Acerca</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/productos" onClick={() => setMenuOpen(false)}>🛍️ Productos</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/inventario" onClick={() => setMenuOpen(false)}>📦 Inventario</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/servicios" onClick={() => setMenuOpen(false)}>🔧 Servicios</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/proveedores" onClick={() => setMenuOpen(false)}>🤝 Proveedores</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/compras" onClick={() => setMenuOpen(false)}>💳 Compras</Link></li>
+          <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/ventas" onClick={() => setMenuOpen(false)}>💰 Ventas</Link></li> 
+        </ul>
+      </nav>  
     </div>
-    
   );
+
 }
-export default navBar;
+export default NavBar;
