@@ -1,0 +1,38 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    background-color: rgb(192, 243, 201);
+    max-width: 200px;
+}
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgb(116, 243, 94);
+}
+.ulproductos {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.titulo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+@media (max-width:400px) {
+    .card {
+        max-width: 100%;
+        margin: 8px;
+        padding: 12px;
+    }
+    .ulproductos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
