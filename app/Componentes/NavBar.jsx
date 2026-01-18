@@ -43,6 +43,7 @@ function NavBar() {
           <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/proveedores" onClick={() => setMenuOpen(false)}>🤝 Proveedores</Link></li>
           <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/compras" onClick={() => setMenuOpen(false)}>💳 Compras</Link></li>
           <li className={styles.liNavBar}><Link className={styles.aNavBar} href="/ventas" onClick={() => setMenuOpen(false)}>💰 Ventas</Link></li> 
+          
         </ul>
       </nav>  
     </div>
