@@ -85,6 +85,7 @@ function NavBar() {
             </button>
             <ul className={`${styles.dropdownMenu} ${dropdownOpen.admin ? styles.show : ""}`}>
               <li><Link className={styles.aNavBar} href="/proveedores" onClick={() => setMenuOpen(false)}>🤝 Proveedores</Link></li>
+              <li><Link className={styles.aNavBar} href="/pedidos" onClick={() => setMenuOpen(false)}>🛒 Pedidos</Link></li>
             </ul>
           </li>
         </ul>
