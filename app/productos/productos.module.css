@@ -1,19 +1,31 @@
 .card {
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 10px;
-    margin: 8px;
+    padding: 4px;
+    margin: 3px;
     text-align: center;
     background-color: rgb(192, 243, 201);
-    max-width: 150px;
+    min-width: 200px;
     font-size: 0.9rem;
+    min-height:  100px;
 }
+
+.emoji {
+    font-size: 6rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
 .card img {
     width: 100%;
     height: auto;
     max-height: 120px;
     object-fit: cover;
     border-radius: 5px;
+    display: none;
 }
 .card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
