@@ -1,0 +1,80 @@
+/* Estilos reutilizables para la página de Compras */
+.comprasContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 16px 8px;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.contentRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+}
+.formWrapper {
+    flex: 0 0 260px;
+    width: 260px;
+}
+.formCompact {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e5ffbb;
+}
+.listWrapper {
+    margin-top: 0;
+    flex: 1 1 480px;
+    max-width: 820px;
+}
+.listTitle {
+    text-align: center;
+}
+.tableCompact {
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Responsive: en pantallas pequeñas apilar columnas */
+@media (max-width: 700px) {
+    .comprasContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .formWrapper, .listWrapper {
+        width: 100%;
+        max-width: 640px;
+        flex: none;
+    }
+    .tableCompact {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+.theadCompras {
+    background-color: #27dc2a;
+    color: white;
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+.tbodyCompras {
+    background-color: #ffffff;
+    font-size: 14px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
